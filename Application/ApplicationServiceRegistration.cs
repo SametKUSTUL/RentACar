@@ -34,7 +34,8 @@ public static class ApplicationServiceRegistration
             configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
         });
 
-        services.AddSingleton<LoggerServiceBase, MsSqlLogger>();
+        //services.AddSingleton<LoggerServiceBase, FileLogger>(); // Dosyaya e loglama
+        services.AddSingleton<LoggerServiceBase, MsSqlLogger>(); // MsSql e loglama
 
         return services;
     }
